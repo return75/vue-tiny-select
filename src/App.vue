@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vue-tiny-select :options="options"></vue-tiny-select>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import VueTinySelect from "@/components/VueTinySelect";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    VueTinySelect
+  },
+  data() {
+    return {
+      options: [
+        {
+          label: 'js',
+          value: 1
+        },
+        {
+          label: 'php',
+          value: 2
+        },
+        {
+          label: 'python',
+          value: 3
+        },
+        {
+          label: 'c++',
+          value: 4
+        }
+      ]
+    }
   }
 }
 </script>
