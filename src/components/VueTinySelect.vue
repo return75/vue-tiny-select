@@ -11,7 +11,7 @@
       </div>
       <div class="vue-tiny-options" ref="options" @click.stop>
           <template v-for="(option) in options" >
-            <div :key="option.value" class="vue-tiny-option" @click="selectItem(option)"> {{option.label}}</div>
+            <div :style="getOptionBackgroundStyle(option)" :key="option.value" class="vue-tiny-option" @click="selectItem(option)"> {{option.label}}</div>
           </template>
       </div>
     </div>
@@ -82,6 +82,13 @@ export default {
       let itemIndex = this.selected.findIndex(i => i.value === item.value)
       if(itemIndex !== -1) {
         this.selected.splice(itemIndex, 1)
+      }
+    },
+    getOptionBackgroundStyle(item) {
+      if(this.selected.findIndex(i => i.value === item.value) !== -1) {
+        return {
+          backgroundColor: 'rgb(243,243,243)'
+        }
       }
     }
   }
