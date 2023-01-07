@@ -1,15 +1,15 @@
 <template>
-  <div style="width: 600px">
+  <div style="width: 400px">
     <div class="vue-tiny-select" @click="toggleMenu" tabindex="0" @focusout="hideMenu">
       <div class="vue-tiny-selected-container">
         <template v-for="item in selected">
-          <div :key="item.value" class="vue-tiny-selected">
+          <div :key="item.value" class="vue-tiny-selected" :style="{backgroundColor: color}">
             <span>{{item.label}}</span>
-            <span></span>
+            <span @click.stop="removeItem(item)" class="vue-tiny-close-btn">&times;</span>
           </div>
         </template>
       </div>
-      <div class="vue-tiny-options" ref="options">
+      <div class="vue-tiny-options" ref="options" @click.stop>
           <template v-for="(option) in options" >
             <div :key="option.value" class="vue-tiny-option" @click="selectItem(option)"> {{option.label}}</div>
           </template>
@@ -51,6 +51,10 @@ export default {
         })
         return isValid
       }
+    },
+    color: {
+      type: String,
+      default: '#0069d9'
     }
   },
   methods: {
@@ -73,28 +77,38 @@ export default {
       if(this.selected.findIndex(i => i.value === item.value) === -1) {
         this.selected.push(item)
       }
+    },
+    removeItem(item) {
+      let itemIndex = this.selected.findIndex(i => i.value === item.value)
+      if(itemIndex !== -1) {
+        this.selected.splice(itemIndex, 1)
+      }
     }
   }
 }
 </script>
-<style scoped>
+<style lang="scss">
+$select-height : 30px;
+$option-height : 40px;
+
 .vue-tiny-select {
   position: relative;
   border: 1px solid gray;
   border-radius: .5rem;
-  min-height: 60px;
+  min-height: $select-height;
   min-width: 400px;
   box-sizing: border-box;
   cursor: pointer;
 }
 .vue-tiny-select:focus {
-  border: 1px solid #0060cc;
+  border: 2px solid #0060cc;
 }
 .vue-tiny-selected-container {
   display: flex;
+  flex-flow: wrap;
   gap: .5rem;
   padding: .5rem;
-  min-height: 60px;
+  min-height: $select-height;
   align-items: baseline;
 }
 .vue-tiny-options {
@@ -103,7 +117,6 @@ export default {
   position: absolute;
   top: 100%;
   margin-top: 10px;
-  min-height: 60px;
   display: none;
   width: 100%;
 }
@@ -111,19 +124,23 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
+  min-height: $option-height;
   border-bottom: 1px solid #cccccc;
 }
 .vue-tiny-option:hover {
   background: #f4f2f2;
 }
 .vue-tiny-selected {
-  background: #0187bb;
   color: white;
-  padding: 2px 6px;
+  padding-left: 8px;
   border-radius: 5px;
   display: flex;
   min-height: 30px;
   align-items: center;
+}
+.vue-tiny-close-btn {
+  border-left: 1px solid white;
+  margin-left: 8px;
+  width: 24px;
 }
 </style>

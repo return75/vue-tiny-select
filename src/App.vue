@@ -29,6 +29,22 @@ export default {
         {
           label: 'c++',
           value: 4
+        },
+        {
+          label: 'ruby',
+          value: 5
+        },
+        {
+          label: 'c',
+          value: 6
+        },
+        {
+          label: 'c#',
+          value: 7
+        },
+        {
+          label: 'dart',
+          value: 8
         }
       ]
     }
