@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <vue-tiny-select v-model="selected" :options="options" multiple></vue-tiny-select>
+    <div style="display: flex">
+      <vue-tiny-select v-model="selected" :options="options" multiple></vue-tiny-select>
+      <div style="margin-left: 4rem;margin-right: 4rem; font-size: 2rem">
+           <code>{{selected}}</code>
+      </div>
+    </div>
   </div>
 </template>
 

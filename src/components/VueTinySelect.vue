@@ -130,6 +130,7 @@ export default {
     },
     clearSelected() {
       this.selected = []
+      this.updateModel(this.selected)
     }
   }
 }
