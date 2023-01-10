@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 400px">
+  <div :style="{width: `${width}px`}">
     <div class="vue-tiny-select" @click="toggleMenu" tabindex="0" @focusout="hideMenu">
       <div class="vue-tiny-selected-container">
         <template v-if="multiple">
@@ -41,6 +41,10 @@ export default {
     }
   },
   props: {
+    width: {
+      type: [Number, String],
+      default: 400
+    },
     multiple: {
       type: Boolean,
       default: false

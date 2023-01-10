@@ -1,12 +1,12 @@
 {
   "name": "vue-tiny-select",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-tiny-select ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "./dist/vue-tiny-select.common.js",
   "dependencies": {
     "core-js": "^3.8.3",
     "node-sass": "^8.0.0",
@@ -41,5 +41,6 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "files": [  "dist/*",  "src/*",  "public/*",  "*.json",  "*.js"]
 }
