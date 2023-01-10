@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <vue-tiny-select :options="options"></vue-tiny-select>
+    <vue-tiny-select v-model="selected" :options="options" multiple></vue-tiny-select>
   </div>
 </template>
 
@@ -46,7 +46,13 @@ export default {
           label: 'dart',
           value: 8
         }
-      ]
+      ],
+      selected: null
+    }
+  },
+  watch: {
+    selected(val) {
+      console.log('val', val)
     }
   }
 }
