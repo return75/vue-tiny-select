@@ -1,24 +1,62 @@
 # vue-tiny-select
 
-## Project setup
+## installation
 ```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
+ npm install vue-float
 ```
 
-### Compiles and minifies for production
+### usage:
 ```
-yarn build
+  <vue-tiny-select v-model="selected" :options="options" multiple></vue-tiny-select>
 ```
-
-### Lints and fixes files
+.vue file:
 ```
-yarn lint
+import VueTinySelect from "@/components/VueTinySelect";
+export default {
+  name: 'App',
+  components: {
+    VueTinySelect
+  },
+  data() {
+    return {
+      options: [
+        {
+          label: 'js',
+          value: 1
+        },
+        {
+          label: 'php',
+          value: 2
+        },
+        {
+          label: 'python',
+          value: 3
+        },
+        {
+          label: 'c++',
+          value: 4
+        },
+        {
+          label: 'ruby',
+          value: 5
+        },
+        {
+          label: 'c',
+          value: 6
+        },
+        {
+          label: 'c#',
+          value: 7
+        },
+        {
+          label: 'dart',
+          value: 8
+        }
+      ],
+      selected: null
+    }
+  },
+}
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+<br>
+ <img src="https://github.com/return75/return75/raw/main/gifs/vue-tiny-select.gif" />
