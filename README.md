@@ -19,6 +19,7 @@ export default {
   },
   data() {
     return {
+      selected: null,
       options: [
         {
           label: 'js',
@@ -53,7 +54,6 @@ export default {
           value: 8
         }
       ],
-      selected: null
     }
   },
 }
