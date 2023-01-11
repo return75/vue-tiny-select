@@ -37,6 +37,11 @@
     },
     "rules": {}
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/return75/vue-tiny-select.git"
+  },
+  "keywords": ["vue select box", "vue select", "vue-select", "v-select", "simple selectbox", "vue dropdown", "vue multiselect"],
   "browserslist": [
     "> 1%",
     "last 2 versions",
