@@ -2,7 +2,7 @@
 
 ## installation
 ```
- npm install vue-float
+ npm install vue-tiny-select
 ```
 
 ### usage:
