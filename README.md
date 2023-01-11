@@ -12,6 +12,8 @@
 .vue file:
 ```
 import VueTinySelect from "vue-tiny-select";
+import "vue-tiny-select/dist/vue-tiny-select.css"
+
 export default {
   name: 'App',
   components: {
