@@ -154,9 +154,9 @@ $border-color: #c2c2c2;
   min-width: 400px;
   box-sizing: border-box;
   cursor: pointer;
-}
-.vue-tiny-select:focus {
-  border: 2px solid #0060cc;
+  &:focus {
+    border: 2px solid #0060cc;
+  }
 }
 .vue-tiny-selected-container {
   display: flex;
@@ -182,9 +182,9 @@ $border-color: #c2c2c2;
   padding: 8px 16px;
   min-height: $option-height;
   border-bottom: 1px solid #eaeaea;
-}
-.vue-tiny-option:hover {
-  background: #f4f2f2;
+  &:hover {
+    background: #f4f2f2;
+  }
 }
 .vue-tiny-selected {
   color: white;
@@ -204,9 +204,9 @@ $border-color: #c2c2c2;
   border-left: 1px solid white;
   margin-left: 8px;
   width: 24px;
-}
-.vue-tiny-close-btn:hover {
-  color: #c4c4c4;
+  &:hover {
+    color: #c4c4c4;
+  }
 }
 .caret-and-clear-btn {
   right: 10px;
@@ -221,9 +221,9 @@ $border-color: #c2c2c2;
 .vue-tiny-clear-btn {
   color: #8d8d8d;
   font-size: 2rem;
-}
-.vue-tiny-clear-btn:hover {
-  color: #464646;
+  &:hover {
+    color: #464646;
+  }
 }
 .caret-down {
   width: 0;
