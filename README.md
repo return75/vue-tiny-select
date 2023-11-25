@@ -1,3 +1,6 @@
+
+ <img src="https://github.com/return75/return75/raw/main/gifs/vue-tiny-select.gif" />
+<br>
 # vue-tiny-select
 
 ## installation
@@ -60,5 +63,4 @@ export default {
   },
 }
 ```
-<br>
- <img src="https://github.com/return75/return75/raw/main/gifs/vue-tiny-select.gif" />
+
